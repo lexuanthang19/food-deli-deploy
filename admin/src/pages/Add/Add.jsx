@@ -26,7 +26,7 @@ const [categories, setCategories] = useState([
     name: "",
     description: "",
     price: "",
-    category: "",
+    category: "695dd533515adae720fef923",
     stock: 100,
   });
 
