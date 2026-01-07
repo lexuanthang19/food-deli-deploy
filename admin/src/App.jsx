@@ -12,10 +12,14 @@ import AddTable from "./pages/Table/AddTable";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Login from "./components/Login/Login";
+import Login from "./components/Login/Login"; // Kiểm tra lại đường dẫn này xem đúng folder chưa nhé
+
+// 1. SỬA QUAN TRỌNG: Lấy link Render từ file assets
+import { url } from './assets/assets'
 
 const App = () => {
-  const url = "http://localhost:4000";
+  // Đã xóa dòng const url = "http://localhost..." đi rồi nhé!
+
   return (
     <div>
       <ToastContainer />
@@ -24,6 +28,7 @@ const App = () => {
       <div className="app-content">
         <Sidebar />
         <Routes>
+          {/* 2. Truyền biến url (Link Render) vào tất cả các trang */}
           <Route path="/" element={<Login url={url}/>} />
           <Route path="/dashboard" element={<Dashboard url={url}/>} />
           <Route path="/add" element={<Add url={url}/>} />
