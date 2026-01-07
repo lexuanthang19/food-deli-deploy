@@ -1,0 +1,16 @@
+import mongoose from "mongoose";
+
+const foodSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  description: { type: String, required: true },
+  price: { type: Number, required: true },
+  image: { type: String, required: true },
+  category: { type: mongoose.Schema.Types.ObjectId, ref: "category", required: true },
+  isAvailable: { type: Boolean, default: true },
+  stock: { type: Number, default: 100 },
+  trackStock: { type: Boolean, default: true }
+});
+
+const foodModel = mongoose.models.food || mongoose.model("food", foodSchema);
+
+export default foodModel;
