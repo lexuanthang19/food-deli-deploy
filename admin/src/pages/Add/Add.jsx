@@ -10,7 +10,11 @@ const Add = ({ url }) => {
   const navigate = useNavigate();
   const { token, admin } = useContext(StoreContext);
   const [image, setImage] = useState(false);
-  const [categories, setCategories] = useState([]);
+  // Tìm dòng này và sửa thành có dữ liệu mẫu:
+const [categories, setCategories] = useState([
+    { _id: "1", name: "Món Ngon" },
+    { _id: "2", name: "Đồ Uống" }
+]);
   const [data, setData] = useState({
     name: "",
     description: "",
