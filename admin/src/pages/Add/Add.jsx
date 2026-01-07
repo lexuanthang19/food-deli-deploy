@@ -72,7 +72,7 @@ const [categories, setCategories] = useState([
       toast.error("Vui lòng đăng nhập");
       navigate("/");
     }
-    fetchCategories();
+    //fetchCategories();
   }, []);
 
   return (
