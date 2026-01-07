@@ -10,11 +10,7 @@ const Add = ({ url }) => {
   const navigate = useNavigate();
   const { token, admin } = useContext(StoreContext);
   const [image, setImage] = useState(false);
-  // Tìm dòng này và sửa thành có dữ liệu mẫu:
-const [categories, setCategories] = useState([
-    { _id: "1", name: "Món Ngon" },
-    { _id: "2", name: "Đồ Uống" }
-]);
+  const [categories, setCategories] = useState([]);
   const [data, setData] = useState({
     name: "",
     description: "",
@@ -72,7 +68,7 @@ const [categories, setCategories] = useState([
       toast.error("Vui lòng đăng nhập");
       navigate("/");
     }
-    //fetchCategories();
+    fetchCategories();
   }, []);
 
   return (
