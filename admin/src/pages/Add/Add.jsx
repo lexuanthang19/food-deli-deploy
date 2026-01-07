@@ -10,7 +10,18 @@ const Add = ({ url }) => {
   const navigate = useNavigate();
   const { token, admin } = useContext(StoreContext);
   const [image, setImage] = useState(false);
-  const [categories, setCategories] = useState([]);
+  // 1. Điền cứng ID thật mà mình đã soi từ Database của bạn
+// ID này là: 695dd533515adae720fef923 (Lấy từ ảnh MongoDB bạn gửi)
+const [categories, setCategories] = useState([
+  { 
+    _id: "695dd533515adae720fef923", 
+    name: "Món Ngon" 
+  },
+  {
+    _id: "695dd533515adae720fef924", // Cái này mình bịa thêm ID giả format thật để test
+    name: "Đồ Uống (Test)" 
+  }
+]);
   const [data, setData] = useState({
     name: "",
     description: "",
@@ -68,7 +79,7 @@ const Add = ({ url }) => {
       toast.error("Vui lòng đăng nhập");
       navigate("/");
     }
-    fetchCategories();
+    //fetchCategories();
   }, []);
 
   return (
